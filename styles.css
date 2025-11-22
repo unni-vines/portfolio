@@ -1,0 +1,99 @@
+/* Background */
+body {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  background: radial-gradient(circle at center, #002b2b, #000);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Container */
+.skill-section {
+  position: relative;
+  text-align: center;
+  width: 80%;
+  z-index: 2;
+}
+
+/* Title */
+h1 {
+  font-size: 52px;
+  margin-bottom: 20px;
+  transform: scale(0.9);
+  opacity: 0;
+  animation: fadeIn 1.5s ease forwards;
+}
+
+h1 .skill {
+  color: #fff;
+  font-weight: 300;
+}
+
+h1 .expertise {
+  color: #00ffff;
+  font-weight: 700;
+  text-shadow: 0 0 10px #00ffff, 0 0 20px #00ffff;
+}
+
+/* Paragraph */
+p {
+  font-size: 18px;
+  line-height: 1.6em;
+  max-width: 600px;
+  margin: 0 auto;
+  opacity: 0;
+  animation: fadeUp 2s ease forwards 1s;
+}
+
+/* Bottom Line */
+.bottom-line {
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%) scaleX(0);
+  height: 2px;
+  background: cyan;
+  box-shadow: 0 0 10px cyan, 0 0 20px cyan;
+  animation: grow 2s ease forwards 2s;
+  z-index: 1;
+}
+
+/* Decorative Symbols */
+.symbol {
+  position: absolute;
+  font-size: 40px;
+  color: rgba(0, 255, 255, 0.2);
+  z-index: 0;
+  opacity: 0;
+  transition: all 2s ease;
+  animation: floatSymbol 6s ease-in-out infinite alternate;
+}
+
+.sym1 { top: 15%; left: 10%; }
+.sym2 { bottom: 20%; right: 15%; animation-delay: 2s; }
+.sym3 { top: 30%; right: 30%; animation-delay: 4s; }
+
+/* Animations */
+@keyframes fadeIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes grow {
+  from { transform: translateX(-50%) scaleX(0); opacity: 0; }
+  to { transform: translateX(-50%) scaleX(1); opacity: 1; }
+}
+
+@keyframes floatSymbol {
+  from { opacity: 0.1; transform: translateY(0) scale(1); }
+  to { opacity: 0.5; transform: translateY(-20px) scale(1.2); }
+}

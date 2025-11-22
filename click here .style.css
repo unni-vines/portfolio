@@ -1,0 +1,145 @@
+/* style.css
+   Full-view portfolio gallery CSS
+   (Paste as your project's style.css)
+*/
+
+/* Import font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+  --bg: #071021;
+  --panel: rgba(255,255,255,0.02);
+  --muted: #9fb3c8;
+  --accent: #7ee7c7;
+  --gap: 18px;
+  --radius: 12px;
+}
+
+/* Reset & base */
+*{ box-sizing: border-box; }
+html,body { height:100%; margin:0; padding:0; background: linear-gradient(180deg,#06101b 0%, #081626 100%); color:#e9f7f4; font-family: 'Poppins', system-ui, Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+a{ color:inherit; text-decoration:none; }
+
+/* Page container */
+header{ padding:20px; text-align:center; }
+header h1{ margin:0; font-size:26px; color:var(--accent); letter-spacing:0.4px; font-weight:700; }
+.portfolio{ max-width:1200px; margin:18px auto; padding:20px; }
+
+/* Section panel */
+.section{
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+  border-radius: var(--radius);
+  padding:18px;
+  margin-bottom:28px;
+  border:1px solid rgba(255,255,255,0.03);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.6);
+}
+.section-title{
+  display:inline-block;
+  margin:0 0 16px 0;
+  padding:6px 12px;
+  background: rgba(255,255,255,0.02);
+  border-radius:10px;
+  font-weight:600;
+  color:#eafaf4;
+  font-size:16px;
+}
+
+/* MAIN: All images show full (no crop) */
+.grid img,
+.flyer-grid img,
+.brochure-grid img,
+.logo-box img,
+.web-section img {
+  width: 100%;
+  height: auto !important;            /* FULL height visible */
+  display: block;
+  border-radius: 10px;
+  object-fit: contain !important;     /* no cropping; show full image */
+  box-shadow: 0 14px 36px rgba(2,6,23,0.6);
+  border: 1px solid rgba(255,255,255,0.04);
+  transition: transform .28s ease, filter .28s ease, box-shadow .28s ease;
+  cursor: pointer;
+  background: linear-gradient(180deg, rgba(0,0,0,0.06), rgba(255,255,255,0.01)); /* nice backdrop for transparent PNGs */
+  padding:6px; /* small inner gap to show border nicely */
+}
+
+/* hover — gentle zoom */
+.grid img:hover,
+.flyer-grid img:hover,
+.brochure-grid img:hover,
+.logo-box img:hover,
+.web-section img:hover {
+  transform: scale(1.03);
+  filter: brightness(1.03) saturate(1.04);
+  box-shadow: 0 22px 50px rgba(2,6,23,0.7);
+  z-index: 5;
+}
+
+/* GRID SETTINGS: posters (many) */
+.grid {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* change min width to show more/less per row */
+  align-items: start;
+}
+
+/* Sections for flyer / brochure / logos / web-design use wider min column */
+.flyer-grid,
+.brochure-grid,
+.logo-section,
+.web-section {
+  display: grid;
+  gap: var(--gap);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  align-items: start;
+}
+
+/* Logo box (title + image) */
+.logo-section { align-items:center; }
+.logo-box { display:flex; gap:14px; align-items:center; }
+.logo-box h4 { margin:0; font-size:15px; color:var(--muted); font-weight:600; }
+
+/* MAKE IMAGES STACK (single column) ON SMALL SCREENS */
+@media (max-width: 720px) {
+  .grid, .flyer-grid, .brochure-grid, .logo-section, .web-section {
+    grid-template-columns: 1fr;
+  }
+  header h1 { font-size:20px; }
+}
+
+/* OPTIONAL: Lightbox CSS (if you add lightbox HTML + JS) */
+#lightbox {
+  position: fixed; inset:0; display:none; align-items:center; justify-content:center;
+  background: rgba(0,0,0,0.88); z-index:9999; padding:20px;
+}
+#lightbox img {
+  max-width: 96%;
+  max-height: 92%;
+  border-radius: 10px;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.8);
+}
+#lightbox .close-btn {
+  position: absolute; top:18px; right:18px; background:transparent; border:none; color:#fff; font-size:22px; cursor:pointer;
+}
+
+/* ACCESSIBILITY: focus outline for keyboard users */
+.grid img:focus,
+.flyer-grid img:focus,
+.brochure-grid img:focus {
+  outline: 3px solid rgba(126,231,199,0.18);
+  outline-offset: 6px;
+}
+
+/* UTILITY: small caption under images (if you add <figcaption>) */
+figure { margin:0; }
+figcaption { margin-top:8px; font-size:13px; color:var(--muted); }
+
+/* FOOTER */
+footer { text-align:center; padding:18px; color:var(--muted); font-size:13px; }
+
+/* NOTES (keep comments in project):
+   1) Replace any absolute (E:\...) image paths with relative web paths (images/...) so browser can load them.
+   2) For best performance, optimize images (resize/compress) before using on web.
+   3) If you want a click-to-enlarge lightbox, add the lightbox HTML and a small JS — I can provide that if needed.
+*/

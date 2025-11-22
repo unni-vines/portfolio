@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+<div class="main">
+
+    <!-- ✅ TOP NAV -->
+    <header>
+        <div class="left-arrow">❯</div>
+        <nav>
+            <a href="about me.html">About me</a>
+            <a href="Education.html">Education</a>
+            <a href="Skill Expertise.html">Skill Expertise</a>
+        </nav>
+    </header>
+
+    <!-- ✅ PROFILE SECTION -->
+    <section class="profile-area">
+        <div class="title-block">
+            <h3>Portfolio</h3>
+            <h3>Graphic Designer</h3>
+            <h1>UIUX</h1>
+        </div>
+
+        <div class="image-frame">
+            <img src="F:\TEXT WEB DESIGN\images/me.png" alt="me.png">
+        </div>
+    </section>
+
+    <!-- ✅ SKILL ICONS -->
+    <h2 class="myskill-heading">My Skill</h2>
+
+    <div class="skill-icons">
+        <div class="card">
+           <img src="https://img.icons8.com/color/48/000000/adobe-illustrator--v1.png" alt="Illustrator">
+        </div>
+        
+        <div class="card">
+         <img src="https://img.icons8.com/color/48/000000/adobe-photoshop--v1.png" alt="Photoshop">
+        </div>
+        
+        <div class="card">
+<img src="https://img.icons8.com/color/48/000000/adobe-indesign--v1.png" alt="Indesign">
+          
+        </div>
+
+        <div class="card">
+            <img src="https://img.icons8.com/color/48/000000/adobe-premiere-pro--v1.png" alt="Premiere">
+        
+        </div>
+        
+        <div class="card">
+         <img src="https://img.icons8.com/color/48/000000/figma--v1.png" alt="Figma">
+        </div>
+        
+        <div class="card">
+       <img src="https://img.icons8.com/color/48/000000/adobe-xd--v1.png" alt="XD">
+        </div>
+    </div>
+
+
+    <!-- ✅ PROGRESS SECTION -->
+<section class="new-skill-section">
+    <h2 class="new-title"></h2>
+
+    <div class="skill-list">
+
+        <div class="skill-row">
+            <span class="skill-name">Photoshop</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">90%</span>
+        </div>
+
+        <div class="skill-row">
+            <span class="skill-name">Illustrator</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">85%</span>
+        </div>
+
+        <div class="skill-row">
+            <span class="skill-name">Indesign</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">70%</span>
+        </div>
+
+        <div class="skill-row">
+            <span class="skill-name">Premier Pro</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">65%</span>
+        </div>
+
+        <div class="skill-row">
+            <span class="skill-name">Figma</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">90%</span>
+        </div>
+
+        <div class="skill-row">
+            <span class="skill-name">Xd</span>
+            <span class="skill-line"></span>
+            <span class="skill-value">85%</span>
+        </div>
+
+    </div>
+</section>
+
+
+
+
+    <!-- ✅ BUTTON -->
+<!-- Replace your existing button with this -->
+<!-- copy & paste inside <body> -->
+    <!-- PAGE TRANSITION LAYER -->
+<!-- <div class="center-wrap">
+  <button class="center-cta" aria-label="Click Here" onclick="window.location.href='Click Here.html'">
+    <span class="cta-ring"></span>
+      <a href="Click Here.html"></a>Click Here</a>
+      <div id="pageTransition" class="page-transition"></div>
+  </button> -->
+
+<div class="center-wrap">
+  <button class="center-cta" id="ctaBtn" aria-label="Click Here">
+    <span class="cta-ring"></span>
+    Click Here
+  </button>
+
+  <div id="pageTransition" class="page-transition"></div>
+</div>
+
+
+</body>
+</html>
+<script>
+
+document.getElementById("ctaBtn").addEventListener("click", () => {
+  const t = document.getElementById("pageTransition");
+  t.classList.add("active");
+
+  setTimeout(() => {
+    window.location.href = "Click Here.html";
+  }, 200); // match CSS duration
+});
+
+
+
+
+</script>

@@ -1,0 +1,99 @@
+/* Reset and Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: #ffffff;
+  padding-bottom: 60px;
+}
+
+/* Header */
+.hero-header {
+  text-align: center;
+  padding: 60px 20px 40px;
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-header h1 {
+  font-size: 40px;
+  font-weight: 700;
+  color: #ffaa00;
+}
+
+.hero-header p {
+  font-size: 18px;
+  margin-top: 10px;
+  color: #ccc;
+}
+
+/* Sections */
+.portfolio-section {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section {
+  margin-top: 50px;
+}
+
+.section h2 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  padding-left: 10px;
+  border-left: 4px solid #ffaa00;
+}
+
+/* Card Grid Layout */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.card {
+  flex: 1 1 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card img {
+  width: 100%;
+  display: block;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(255, 170, 0, 0.4);
+}
+
+.card:hover img {
+  transform: scale(1.03);
+}
+
+.card.wide {
+  flex: 1 1 100%;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .card-grid {
+    flex-direction: column;
+  }
+
+  .card.wide {
+    flex: 1 1 auto;
+  }
+}

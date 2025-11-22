@@ -1,0 +1,102 @@
+/* ✅ Import Poppins font */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: linear-gradient(to bottom, #003c3c, #002626);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 40px;
+}
+
+.about-content {
+  text-align: center;
+  max-width: 700px;
+  animation: fadeIn 2s ease;
+}
+
+.title {
+  font-size: 2.5em;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.highlight {
+  color: #00ffff;
+  font-weight: 600;
+}
+
+.about-text {
+  font-size: 1em;
+  line-height: 1.6;
+  color: #ccc;
+  padding: 0 20px;
+  animation: slideUp 2s ease forwards;
+  opacity: 0;
+}
+
+/* Vertical lines */
+.vertical-line {
+  width: 2px;
+  height: 150px;
+  background-color: #00ffff;
+  animation: growLine 2s ease forwards;
+}
+
+.vertical-line.left {
+  margin-right: 20px;
+}
+
+.vertical-line.right {
+  margin-left: 20px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes growLine {
+  from {
+    height: 0;
+    opacity: 0;
+  }
+  to {
+    height: 150px;
+    opacity: 1;
+  }
+}
