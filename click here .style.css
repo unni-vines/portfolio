@@ -143,3 +143,10 @@ footer { text-align:center; padding:18px; color:var(--muted); font-size:13px; }
    2) For best performance, optimize images (resize/compress) before using on web.
    3) If you want a click-to-enlarge lightbox, add the lightbox HTML and a small JS — I can provide that if needed.
 */
+
+/* Social Media Posters – 2 images per row on mobile */
+@media (max-width: 600px) {
+  .social-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}

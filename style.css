@@ -628,3 +628,181 @@ body{
   }
 }
 
+
+/* ================================================
+   📱 RESPONSIVE — MOBILE OPTIMIZATION
+   (No color or design changes, only resizing)
+================================================ */
+
+/* ---------- 1050px (large tablets / small laptops) ---------- */
+@media(max-width:1050px){
+
+  .profile-area{
+    margin-left: 5%;
+    margin-right: 5%;
+    padding: 60px 20px;
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .image-frame{
+    width: 450px;
+    height: 520px;
+  }
+
+  .title-block h1{
+    font-size: 110px;
+  }
+
+  .title-block h3{
+    font-size: 32px;
+  }
+}
+
+
+/* ---------- 768px (tablets) ---------- */
+@media(max-width:768px){
+
+  header{
+    padding:20px 20px;
+    gap:20px;
+  }
+
+  nav a{
+    font-size:16px;
+  }
+
+  .profile-area{
+    padding: 40px 20px;
+  }
+
+  .title-block h1{
+    font-size: 80px;
+  }
+
+  .title-block h3{
+    font-size: 26px;
+  }
+
+  .image-frame{
+    width: 350px;
+    height: 420px;
+  }
+
+  .skill-icons{
+    gap: 25px;
+  }
+
+  .card{
+    width: 90px;
+  }
+}
+
+
+/* ---------- 520px (mobile phones) ---------- */
+@media(max-width:520px){
+
+  header{
+    justify-content:center;
+    padding:15px 10px;
+  }
+
+  nav{
+    gap:18px;
+  }
+
+  nav a{
+    font-size:14px;
+  }
+
+  .profile-area{
+    flex-direction:column;
+    padding: 25px 10px;
+    margin: 0;
+  }
+
+  .title-block h1{
+    font-size:52px;
+    text-align:center;
+  }
+
+  .title-block h3{
+    font-size:20px;
+    text-align:center;
+  }
+
+  .image-frame{
+    width: 250px;
+    height: 300px;
+  }
+
+  .myskill-heading{
+    font-size:22px;
+  }
+
+  .new-skill-section{
+    padding:25px 20px;
+  }
+
+  .skill-row{
+    gap:10px;
+  }
+
+  .skill-name{
+    width:100px;
+    font-size:14px;
+  }
+
+  .skill-value{
+    font-size:13px;
+  }
+
+  .center-wrap{
+    height:35vh;
+  }
+
+  .center-cta{
+    --size:45px;
+    --padx:20px;
+    font-size:13px;
+  }
+}
+
+
+/* ---------- 380px (small phones) ---------- */
+@media(max-width:380px){
+
+  nav{
+    gap:12px;
+  }
+
+  nav a{
+    font-size:13px;
+  }
+
+  .title-block h1{
+    font-size:45px;
+  }
+
+  .title-block h3{
+    font-size:18px;
+  }
+
+  .image-frame{
+    width: 210px;
+    height: 260px;
+  }
+
+  .card{
+    width:80px;
+  }
+
+  .skill-name{
+    width:80px;
+  }
+
+  .center-cta{
+    --padx:16px;
+    font-size:12px;
+  }
+}
