@@ -145,8 +145,8 @@ document.getElementById("ctaBtn").addEventListener("click", () => {
   t.classList.add("active");
 
   setTimeout(() => {
-    window.location.href = "Click Here.html";
-  }, 200); // match CSS duration
+    window.location.assign("Click Here.html"); // Safer for transitions
+  }, 200);
 });
 
 </script>
