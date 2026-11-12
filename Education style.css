@@ -1,99 +1,496 @@
-body {
+
+/* =================================
+   GENERAL SETTINGS
+================================= */
+
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
   font-family: 'Poppins', sans-serif;
-  background: linear-gradient(to bottom right, #002d2d, #000000);
-  color: white;
+  background: #030914;
+  color: #ffffff;
+  opacity: 0;
+  animation: pageEnter 0.7s ease forwards;
+}
+
+/* =================================
+   EDUCATION SECTION
+================================= */
+
+.education-section {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 8%;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(0, 145, 255, 0.09),
+      transparent 45%
+    ),
+    #030914;
+}
+
+/* Background Grid */
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(
+      rgba(80,150,210,0.035) 1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(80,150,210,0.035) 1px,
+      transparent 1px
+    );
+
+  background-size: 60px 60px;
+  pointer-events: none;
+}
+
+.education-container {
+  max-width: 1100px;
+  margin: auto;
+  position: relative;
+  z-index: 2;
+}
+
+/* =================================
+   HEADING
+================================= */
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 90px;
+}
+
+.section-label {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  gap: 12px;
+
+  color: #8FA2BC;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 4px;
+
+  margin-bottom: 20px;
 }
 
-.education {
-  width: 90%;
-  max-width: 600px;
-  text-align: center;
+.blue-dot {
+  height: 8px;
+  width: 8px;
+  background: #00A8FF;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #00A8FF;
 }
 
-.title {
-  font-size: 36px;
-  margin-bottom: 40px;
-  font-weight: 600;
-  animation: fadeDown 1.2s ease-in-out;
+.main-title {
+  font-size: clamp(65px, 9vw, 100px);
+  font-weight: 700;
+  letter-spacing: -6px;
+  line-height: 1.1;
+  color: #E8EDF5;
 }
 
-/* Timeline container */
+.main-title span {
+  color: #00A8FF;
+}
+
+.subtitle {
+  color: #91A0B5;
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 18px;
+  line-height: 1.9;
+}
+
+.heading-line {
+  width: 65px;
+  height: 4px;
+  background: #00A8FF;
+  border-radius: 10px;
+  margin: 28px auto 0;
+  box-shadow: 0 0 15px rgba(0,168,255,0.5);
+}
+
+/* =================================
+   TIMELINE
+================================= */
+
 .timeline {
-  display: flex;
-  flex-direction: column;
-  gap: 30px;
+  position: relative;
+  max-width: 950px;
+  margin: auto;
+  padding: 10px 0 30px;
 }
 
-/* Timeline items */
+.timeline-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    #00A8FF 10%,
+    #00A8FF 90%,
+    transparent
+  );
+
+  box-shadow: 0 0 15px rgba(0,168,255,0.5);
+}
+
+/* Timeline Items */
+
 .timeline-item {
-  width: 100%;
-  opacity: 0;
-  animation: slideFromBottom 1s ease forwards;
+  position: relative;
+  width: 50%;
+  padding: 0 55px;
+  margin-bottom: 65px;
 }
 
-/* Content box */
-.timeline-item .content {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 20px;
-  border-radius: 12px;
-  min-width: 250px;
+.timeline-item.left {
+  left: 0;
+  text-align: right;
+}
+
+.timeline-item.right {
+  left: 50%;
   text-align: left;
-  transition: transform 0.4s ease, background 0.4s ease;
 }
 
-.timeline-item .content h3 {
-  margin: 0;
-  font-size: 20px;
-  font-weight: 600;
+/* =================================
+   TIMELINE CARDS
+================================= */
+
+.timeline-content {
+  position: relative;
+  padding: 30px;
+
+  background: linear-gradient(
+    145deg,
+    rgba(15,32,53,0.95),
+    rgba(5,15,29,0.95)
+  );
+
+  border: 1px solid rgba(74,139,195,0.22);
+  border-radius: 15px;
+
+  transition: all 0.4s ease;
+  overflow: hidden;
 }
-.timeline-item .content p {
-  margin: 5px 0 0;
-  font-size: 16px;
+
+/* Card Glow */
+
+.timeline-content::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #00A8FF,
+    transparent
+  );
+
+  opacity: 0;
+  transition: 0.4s;
 }
-.timeline-item .content small {
+
+.timeline-content:hover {
+  transform: translateY(-10px);
+  border-color: #00A8FF;
+
+  box-shadow:
+    0 15px 45px rgba(0,0,0,0.3),
+    0 0 25px rgba(0,168,255,0.12);
+}
+
+.timeline-content:hover::before {
+  opacity: 1;
+}
+
+/* Card Top */
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.card-number {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #60758F;
+}
+
+.card-top i {
+  font-size: 23px;
+  color: #00A8FF;
+  transition: 0.4s;
+}
+
+.timeline-content:hover .card-top i {
+  transform: scale(1.2) rotate(-8deg);
+  filter: drop-shadow(0 0 8px #00A8FF);
+}
+
+/* Card Text */
+
+.year {
+  display: inline-block;
+  color: #00A8FF;
   font-size: 13px;
-  opacity: 0.8;
+  font-weight: 600;
+  letter-spacing: 2px;
+  margin-bottom: 10px;
 }
 
-/* Hover effect */
-.timeline-item .content:hover {
-  transform: scale(1.05);
-  background: rgba(0, 255, 198, 0.2);
+.timeline-content h2 {
+  color: #E9F0F9;
+  font-size: 22px;
+  font-weight: 600;
+  margin-bottom: 8px;
 }
 
-/* Animation delays (order) */
-.timeline-item:nth-child(1) { animation-delay: 0.3s; }
-.timeline-item:nth-child(2) { animation-delay: 0.6s; }
-.timeline-item:nth-child(3) { animation-delay: 0.9s; }
-.timeline-item:nth-child(4) { animation-delay: 1.2s; }
-
-/* Animations */
-@keyframes fadeDown {
-  from { opacity: 0; transform: translateY(-40px); }
-  to { opacity: 1; transform: translateY(0); }
+.timeline-content p {
+  color: #8FA1B7;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
 }
 
-@keyframes slideFromBottom {
-  from { opacity: 0; transform: translateY(100px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.timeline-item .content {
-  background: rgba(255, 255, 255, 0.08);
-  padding: 20px;
-  border-radius: 12px;
-  min-width: 250px;
-  text-align: center;   /* text center */
-  
-  display: flex;        /* flexbox enable */
-  flex-direction: column;
-  justify-content: center; /* vertical center */
-  align-items: center;     /* horizontal center */
+/* Card Bottom */
 
-  min-height: 120px;    /* box height for balance */
-  transition: transform 0.4s ease, background 0.4s ease;
+.card-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  border-top: 1px solid rgba(255,255,255,0.08);
+
+  margin-top: 25px;
+  padding-top: 16px;
+
+  font-size: 9px;
+  letter-spacing: 2px;
+  color: #667B94;
+}
+
+.status-dot {
+  height: 7px;
+  width: 7px;
+  background: #00A8FF;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00A8FF;
+}
+
+/* =================================
+   TIMELINE CIRCLE
+================================= */
+
+.timeline-dot {
+  position: absolute;
+  top: 35px;
+
+  width: 36px;
+  height: 36px;
+
+  background: #071629;
+  border: 2px solid #00A8FF;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #00A8FF;
+  font-size: 12px;
+
+  box-shadow:
+    0 0 15px rgba(0,168,255,0.4),
+    inset 0 0 10px rgba(0,168,255,0.1);
+
+  z-index: 3;
+  transition: 0.3s;
+}
+
+.timeline-item.left .timeline-dot {
+  right: -18px;
+}
+
+.timeline-item.right .timeline-dot {
+  left: -18px;
+}
+
+.timeline-item:hover .timeline-dot {
+  background: #00A8FF;
+  color: #030914;
+  box-shadow: 0 0 25px #00A8FF;
+  transform: scale(1.15);
+}
+
+/* =================================
+   FOOTER
+================================= */
+
+.education-footer {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid rgba(255,255,255,0.1);
+
+  padding-top: 20px;
+  margin-top: 30px;
+
+  color: #687D96;
+  font-size: 9px;
+  letter-spacing: 3px;
+}
+
+/* =================================
+   PAGE TRANSITION ANIMATION
+================================= */
+
+/* Page Leaving */
+
+body.page-leaving {
+  animation: pageExit 0.45s ease forwards;
+  pointer-events: none;
+}
+
+/* Page Enter Animation */
+
+@keyframes pageEnter {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Page Exit Animation */
+
+@keyframes pageExit {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+/* =================================
+   RESPONSIVE DESIGN
+================================= */
+
+@media (max-width: 768px) {
+
+  .education-section {
+    padding: 80px 6%;
+  }
+
+  .section-heading {
+    margin-bottom: 65px;
+  }
+
+  .main-title {
+    font-size: 65px;
+    letter-spacing: -4px;
+  }
+
+  .timeline-line {
+    left: 17px;
+  }
+
+  .timeline-item,
+  .timeline-item.left,
+  .timeline-item.right {
+    width: 100%;
+    left: 0;
+    padding: 0 0 0 55px;
+    margin-bottom: 45px;
+    text-align: left;
+  }
+
+  .timeline-item.left .timeline-dot,
+  .timeline-item.right .timeline-dot {
+    left: 0;
+    right: auto;
+  }
+
+  .timeline-content {
+    padding: 24px;
+  }
+
+  .timeline-content h2 {
+    font-size: 19px;
+  }
+
+  .education-footer {
+    gap: 15px;
+    font-size: 8px;
+    letter-spacing: 1px;
+  }
+}
+
+@media (max-width: 400px) {
+
+  .main-title {
+    font-size: 54px;
+  }
+
+  .timeline-content {
+    padding: 20px;
+  }
+
+  .card-number {
+    font-size: 9px;
+  }
+}
+
+/* =================================
+   ACCESSIBILITY
+================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  body {
+    animation: none;
+    opacity: 1;
+  }
+
+  body.page-leaving {
+    animation: none;
+  }
+
+  .timeline-content,
+  .timeline-dot,
+  .card-top i {
+    transition: none;
+  }
 }
