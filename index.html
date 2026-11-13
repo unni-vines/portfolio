@@ -945,6 +945,215 @@ footer{border-top:1px solid var(--line);padding:30px 0;color:#667387;font-size:1
   section{padding:75px 0}
 }
 
+/* =================================================
+   MOBILE HERO, PROFILE, SKILLS & CTA - COMPLETE FIX
+================================================= */
+
+@media (max-width: 520px) {
+
+  /* 1. Global Section Spacing */
+  section {
+    padding-top: 42px !important;
+    padding-bottom: 42px !important;
+  }
+
+  /* 2. Hero & Profile Section */
+  .hero {
+    min-height: auto;
+    padding: 90px 0 35px !important;
+  }
+
+  .hero-copy h1 {
+    font-size: 32px !important;
+    line-height: 1.12 !important;
+    letter-spacing: -1px !important;
+    margin-bottom: 10px !important;
+  }
+
+  .hero-copy h1 span {
+    display: block;
+    margin-bottom: 4px !important;
+  }
+
+  .hero-copy p {
+    margin: 12px auto 18px !important;
+    max-width: 340px;
+    font-size: 14px !important;
+    line-height: 1.48 !important;
+  }
+
+  /* പ്രൊഫൈൽ ഏരിയയും ഐക്കണുകളും കൃത്യമായ അകലത്തിൽ വെക്കാൻ */
+  .visual {
+    width: 100%;
+    height: 415px !important;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px auto 10px !important;
+    overflow: visible;
+  }
+
+  /* ഡെസ്ക്ടോപ്പ് പോലെ റിംഗ് അല്പം ചെറുതാക്കി */
+  .ring {
+    width: 280px !important;
+    height: 280px !important;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    box-shadow:
+      0 0 35px rgba(0, 164, 255, 0.25),
+      inset 0 0 35px rgba(0, 164, 255, 0.08);
+    animation: none !important;
+  }
+
+  .ring::after {
+    animation: none !important;
+  }
+
+  /* ഫോട്ടോ വലുതാക്കി ഡെസ്ക്ടോപ്പ് ഫീൽ നൽകി */
+  .portrait {
+    position: absolute;
+    width: 305px !important;
+    height: 340px !important;
+    left: 50%;
+    bottom: 58px !important;
+    transform: translateX(-50%);
+    object-fit: contain;
+    object-position: center bottom;
+    z-index: 2;
+  }
+
+  /* Behance & Social Icons - ഫോട്ടോയുടെ നെഞ്ചത്ത് നിന്ന് മാറ്റി താഴെ, My Expertise-ന് തൊട്ടുമുകളിൽ */
+  .social {
+    position: absolute;
+    top: auto !important;
+    bottom: 4px !important;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    z-index: 5;
+    width: 100%;
+  }
+
+  .social a {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+  }
+
+  /* 3. Skills Cards & Alignment Fix (Photoshop, Illustrator, InDesign, Premiere Pro) */
+  .skills-section {
+    padding-top: 25px !important;
+  }
+
+  .section-heading {
+    margin-bottom: 24px !important;
+  }
+
+  .skill-card, .expertise-card, .tool-item, .skill-box {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    padding: 18px 16px !important;
+    margin-bottom: 14px !important;
+    height: auto !important;
+    border-radius: 16px !important;
+  }
+
+  /* ടൈറ്റിലുകൾ (Photoshop, Illustrator, Premiere Pro, InDesign തുടങ്ങിയവ) മുകളിലേക്ക് */
+  .skill-card h3, .expertise-card h3, .tool-title, .skill-name {
+    font-size: 17px !important;
+    font-weight: 600 !important;
+    line-height: 1.25 !important;
+    margin-top: 0 !important;
+    margin-bottom: 4px !important;
+    padding-right: 90px !important; /* വലതുവശത്തെ ലെവൽ ബോക്സിൽ തട്ടാതിരിക്കാൻ */
+    text-align: left !important;
+  }
+
+  /* ഡിസ്ക്രിപ്ഷൻ (Photo Editing, Vector and Brand Design, Video Editing Motion മുതലായവ) */
+  .skill-card p, .expertise-card p, .skill-desc, .tool-desc {
+    font-size: 12.5px !important;
+    line-height: 1.4 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    padding-right: 90px !important;
+    text-align: left !important;
+    opacity: 0.85;
+  }
+
+  /* Expert, Advanced, 90%, 85%, 70% ബോക്സുകൾ കൃത്യമായ ലെവലിൽ */
+  .skill-meta, .skill-right, .skill-level-wrap, .percentage-box {
+    position: absolute !important;
+    top: 18px !important;
+    right: 16px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-end !important;
+    justify-content: flex-start !important;
+    text-align: right !important;
+  }
+
+  .skill-percent, .percentage {
+    font-size: 15px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    margin-bottom: 3px !important;
+    display: block !important;
+  }
+
+  .badge, .skill-level, .level-tag {
+    font-size: 10.5px !important;
+    line-height: 1.1 !important;
+    padding: 2px 7px !important;
+    border-radius: 6px !important;
+    white-space: nowrap !important;
+    display: inline-block !important;
+  }
+
+  /* 4. Projects That Speak & Have a Project in Mind (Matching Alignment) */
+  .projects-section, .cta-section, .contact-section, .project-mind-section {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+    text-align: left !important;
+  }
+
+  .projects-section h2, .cta-section h2, .contact-section h2, .project-mind-section h2 {
+    font-size: 28px !important;
+    line-height: 1.15 !important;
+    letter-spacing: -0.8px !important;
+    margin-bottom: 12px !important;
+    text-align: left !important;
+  }
+
+  .projects-section p, .cta-section p, .contact-section p, .project-mind-section p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+    margin-top: 0 !important;
+    margin-bottom: 20px !important;
+    text-align: left !important;
+    max-width: 100% !important;
+  }
+
+  .cta-box, .contact-card, .project-mind-box {
+    padding: 24px 20px !important;
+    border-radius: 20px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    text-align: left !important;
+  }
+}
+
 </style>
 </head>
 <body>
