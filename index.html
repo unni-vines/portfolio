@@ -646,6 +646,98 @@
 }
 
 
+/* ==========================================
+   MOBILE SKILL GRAPH RESPONSIVE FIX
+   Desktop styles remain unchanged
+========================================== */
+
+@media (max-width: 520px) {
+
+  /* Graph container */
+  .skill-graph-container {
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+  }
+
+  /* SVG graph size */
+  .skill-graph-svg {
+    width: 100%;
+    height: 180px;
+    overflow: visible;
+  }
+
+  /* Percentage labels */
+  .graph-label-group text {
+    transform-box: fill-box;
+    transform-origin: center;
+    transform: scaleX(4.3);
+    font-size: 11px;
+  }
+
+  .graph-label-group .percent-val {
+    font-size: 12px;
+  }
+
+  /* REMOVE ALL GRAPH CIRCLES ON MOBILE */
+  .graph-node {
+    display: none !important;
+  }
+
+  /* Graph area */
+  .graph-area-gradient {
+    opacity: 0;
+  }
+
+  .skill-panel.show .graph-area-gradient {
+    opacity: 0.35;
+  }
+
+  /* Wave line animation */
+  .graph-line {
+    stroke-width: 3.5;
+  }
+
+  /* Skill labels */
+  .graph-axis-labels {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px 8px;
+    margin-top: 5px;
+    padding-top: 18px;
+    text-align: center;
+  }
+
+  .axis-item {
+    min-width: 0;
+  }
+
+  .axis-item span {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+
+  .axis-item strong {
+    font-size: 11px;
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+
+}
+
+/* Smaller mobile screens */
+@media (max-width: 360px) {
+
+  .skill-graph-svg {
+    height: 170px;
+  }
+
+  .graph-axis-labels {
+    gap: 12px 5px;
+  }
+
+}
+
+
 /* =========================================
    REVEAL ANIMATION
 ========================================= */
@@ -830,7 +922,7 @@ nav{
 h1{font-size:clamp(54px,7vw,91px);line-height:.98;letter-spacing:-5px}
 h1 .gray{color:#a9b1bd;display:block}
 h1 .blue{color:var(--blue);display:block}
-.hero-copy p{max-width:530px;color:var(--muted);line-height:1.8;margin:27px 0}
+.hero-copy p{max-width:530px;color:var(--muted);line-height:1.8;margin:27px 0;line-height:24px}
 .actions{display:flex;gap:13px;flex-wrap:wrap}
 .btn{padding:14px 22px;border-radius:12px;border:1px solid #405166;transition:.3s;font-weight:600}
 .btn.primary{background:linear-gradient(135deg,#079cff,#1267ff);border-color:#0aa5ff;box-shadow:0 12px 30px rgba(0,153,255,.18)}
